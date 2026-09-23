@@ -4,118 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Date Mission</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="invite-wrap">
-      <div class="petal petal1">🌼</div>
-      <div class="petal petal2">🌼</div>
-      <div class="petal petal3">🌼</div>
+
 
       <div class="invite-card">
-        <div class="top-label">A Little Date Mission</div>
+        <div class="top-label">LOCK IN</div>
 
-        <h1>For my cutie baby, Hui Xuan 🌼</h1>
+        <h1>For my friend, WaiYanMinMin </h1>
 
-        <p class="intro">
-          You are invited to a secret dinner date this Saturday at <b>7:00 PM</b> 💛
-        </p>
-
-        <div class="lock-box" id="hiddenText">
-          Restaurant locked: <span>???? & ??</span>
-        </div>
-
-        <div class="game-box" id="questionBox">
-          <p class="step">Question <span id="stepNo">1</span> of 2</p>
-          <h2 id="questionText"></h2>
-          <div class="answers" id="answers"></div>
-          <p class="message" id="message"></p>
-        </div>
-
-        <div class="final-card" id="unlockBox">
-          <div class="success">Unlocked 💛</div>
-          <h2>ASAP & CO.</h2>
-
-          <p>
-            <b>Saturday, 7:00 PM</b><br />
-            70 Telok Ayer St, #01-01<br />
-            Singapore 048458
-          </p>
-
-          <div class="love-note">
-            Dress cute. Come hungry. I’ll be waiting for you 🌼
-            Can arrange the date again :D
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      const questions = [
-        {
-          question: "What happened on June 12th?",
-          answers: [
-            "We became official",
-            "I ragebaited you",
-            "I got scolded :(",
-          ],
-          correct: 0,
-          unlock: "Restaurant unlocked: ASAP & ??",
-        },
-        {
-          question: "What happened on December 15th?",
-          answers: ["Our first trip together", "We ate intestines", "You mad mad at me >:("],
-          correct: 0,
-          unlock: "Restaurant unlocked: ASAP & CO.",
-        },
-      ];
-
-      let currentQuestion = 0;
-
-      const questionText = document.getElementById("questionText");
-      const answersDiv = document.getElementById("answers");
-      const message = document.getElementById("message");
-      const hiddenText = document.getElementById("hiddenText");
-      const unlockBox = document.getElementById("unlockBox");
-      const stepNo = document.getElementById("stepNo");
-
-      function loadQuestion() {
-        const q = questions[currentQuestion];
-        questionText.innerText = q.question;
-        stepNo.innerText = currentQuestion + 1;
-        answersDiv.innerHTML = "";
-        message.innerText = "";
-
-        q.answers.forEach((answer, index) => {
-          const btn = document.createElement("button");
-          btn.innerText = answer;
-          btn.onclick = () => checkAnswer(index);
-          answersDiv.appendChild(btn);
-        });
-      }
-
-      function checkAnswer(selected) {
-        const q = questions[currentQuestion];
-
-        if (selected === q.correct) {
-          hiddenText.innerText = q.unlock;
-          message.innerText = "Correct hehe 💛";
-          currentQuestion++;
-
-          if (currentQuestion < questions.length) {
-            setTimeout(loadQuestion, 900);
-          } else {
-            setTimeout(() => {
-              document.getElementById("questionBox").style.display = "none";
-              unlockBox.style.display = "block";
-            }, 900);
-          }
-        } else {
-          message.innerText = "Wronggg >:( try again baby";
-        }
-      }
-
-      loadQuestion();
-    </script>
   </body>
 </html>
